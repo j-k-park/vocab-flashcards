@@ -85,20 +85,22 @@
 
     <div class="manage-body">
       <section class="add-form">
-        <div class="field-row">
-          <input id="inputWord" class="field" type="text" placeholder="영단어" maxlength="50">
-          <input id="inputMeaning" class="field" type="text" placeholder="뜻" maxlength="100">
-        </div>
-        <div class="field-row">
-          <input id="inputPos" class="field field-small" type="text" placeholder="품사 (선택)" maxlength="10">
-          <input id="inputExample" class="field" type="text" placeholder="예문 (선택)" maxlength="200">
-        </div>
-        <p id="dupWarning" class="dup-warning" hidden>이미 있는 단어예요</p>
-        <div class="form-actions">
-          <button id="addWordBtn" class="btn btn-primary" type="button" disabled>추가</button>
-          <button id="cancelEditBtn" class="btn btn-secondary" type="button" hidden>취소</button>
-          <button id="bulkToggleBtn" class="btn btn-outline" type="button">일괄 추가</button>
-        </div>
+        <form id="addForm">
+          <div class="field-row">
+            <input id="inputWord" class="field" type="text" placeholder="영단어" maxlength="50">
+            <input id="inputMeaning" class="field" type="text" placeholder="뜻" maxlength="100">
+          </div>
+          <div class="field-row">
+            <input id="inputPos" class="field field-small" type="text" placeholder="품사 (선택)" maxlength="10">
+            <input id="inputExample" class="field" type="text" placeholder="예문 (선택)" maxlength="200">
+          </div>
+          <p id="dupWarning" class="dup-warning" hidden>이미 있는 단어예요</p>
+          <div class="form-actions">
+            <button id="addWordBtn" class="btn btn-primary" type="submit" disabled>추가</button>
+            <button id="cancelEditBtn" class="btn btn-secondary" type="button" hidden>취소</button>
+            <button id="bulkToggleBtn" class="btn btn-outline" type="button">일괄 추가</button>
+          </div>
+        </form>
       </section>
 
       <section id="bulkSection" class="bulk-section" hidden>

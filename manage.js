@@ -27,6 +27,7 @@ export class ManageScreen {
   cacheDom() {
     this.el = {
       count: document.getElementById("manageCount"),
+      addForm: document.getElementById("addForm"),
       inputWord: document.getElementById("inputWord"),
       inputMeaning: document.getElementById("inputMeaning"),
       inputPos: document.getElementById("inputPos"),
@@ -332,7 +333,11 @@ export class ManageScreen {
     ["inputWord", "inputMeaning", "inputPos", "inputExample"].forEach((key) => {
       this.el[key].addEventListener("input", () => this.updateFormValidity());
     });
-    this.el.addBtn.addEventListener("click", () => this.submitForm());
+    // <button type="submit">이므로 클릭은 물론 필드에서 Enter를 눌러도 여기로 들어온다
+    this.el.addForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      this.submitForm();
+    });
     this.el.cancelEditBtn.addEventListener("click", () => this.exitEdit());
 
     this.el.bulkToggleBtn.addEventListener("click", () => {
