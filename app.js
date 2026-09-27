@@ -427,6 +427,14 @@ function applyRoute() {
   document.getElementById("learnScreen").hidden = isManage || isSettings;
   document.getElementById("manageScreen").hidden = !isManage;
   document.getElementById("settingsScreen").hidden = !isSettings;
+
+  // 단어 관리 화면에 들어오면 바로 타이핑할 수 있도록 첫 입력칸에 포커스
+  if (isManage) {
+    requestAnimationFrame(() => {
+      const input = document.getElementById("inputWord");
+      if (input) input.focus();
+    });
+  }
 }
 
 // ---------- 상단 메뉴 드롭다운 ----------
@@ -464,6 +472,9 @@ document.addEventListener("keydown", (e) => {
 
 document.getElementById("backBtn").addEventListener("click", () => {
   location.hash = "";
+});
+document.getElementById("quickAddBtn").addEventListener("click", () => {
+  location.hash = "#/manage";
 });
 document.getElementById("settingsBackBtn").addEventListener("click", () => {
   location.hash = "";

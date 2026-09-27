@@ -168,6 +168,23 @@ body {
   background: var(--color-secondary);
 }
 
+.quick-add-btn {
+  flex-shrink: 0;
+  min-height: 36px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 20px;
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+.quick-add-btn:hover {
+  filter: brightness(0.95);
+}
+
 /* ---------- 진도 막대 (F-08) ---------- */
 .progress-track {
   height: 4px;
@@ -569,6 +586,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+/* display:flex가 hidden 속성보다 우선 적용되는 걸 막는다 (실제로 항상 펼쳐져 보이던 버그) */
+.bulk-section[hidden] {
+  display: none;
 }
 
 .field-row {
